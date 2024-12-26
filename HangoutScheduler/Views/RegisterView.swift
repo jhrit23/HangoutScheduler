@@ -13,6 +13,8 @@ struct RegisterView: View {
     @State var email: String = ""
     @State var password: String = ""
     
+    @StateObject var viewModel = RegisterViewViewModel()
+    
     var body: some View {
         VStack {
                         ZStack {
@@ -26,15 +28,20 @@ struct RegisterView: View {
                         .frame(width: 275, height: 100, alignment: .center)
                         
                         Form {
-                            TextField("Name", text: $name)
+                            TextField("Name", text: $viewModel.name)
                                 .autocorrectionDisabled()
                                 .autocapitalization(.none)
-                            TextField("Email", text: $email)
+                            TextField("Email", text: $viewModel.email)
                                 .autocorrectionDisabled()
                                 .autocapitalization(.none)
-                            SecureField("Password", text: $password)
+                            SecureField("Password", text: $viewModel.password)
                             Button(action: {
                                 //Register
+                                if !viewModel.fieldsEmpty() || !viewModel.validEmail() {
+                                    viewModel.showInvalidEntryAlert = true
+                                }else{
+                                    viewModel.register()
+                                }
                             }, label: {
                                 Text("Register")
                             })
@@ -46,6 +53,9 @@ struct RegisterView: View {
                         .frame(height: 250, alignment: .center)
             
                     }
+        .alert(isPresented: $viewModel.showInvalidEntryAlert) {
+            Alert(title: Text("Error"), message: Text("Please ensure all fields have values and a valid email address is entered."))
+        }
                     .offset(y: -150)
     }
 }
