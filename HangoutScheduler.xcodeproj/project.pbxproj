@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B1967AF62D1E15B100AADF20 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B1967AF52D1E15B100AADF20 /* FirebaseAuth */; };
+		B1967AF82D1E15B100AADF20 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B1967AF72D1E15B100AADF20 /* FirebaseFirestore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		B19A0E652D12146A00488298 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1967AF62D1E15B100AADF20 /* FirebaseAuth in Frameworks */,
+				B1967AF82D1E15B100AADF20 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +119,8 @@
 			);
 			name = HangoutScheduler;
 			packageProductDependencies = (
+				B1967AF52D1E15B100AADF20 /* FirebaseAuth */,
+				B1967AF72D1E15B100AADF20 /* FirebaseFirestore */,
 			);
 			productName = HangoutScheduler;
 			productReference = B19A0E542D12146800488298 /* HangoutScheduler.app */;
@@ -195,6 +204,9 @@
 			);
 			mainGroup = B19A0E4B2D12146800488298;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B1967AF42D1E15B100AADF20 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B19A0E552D12146800488298 /* Products */;
 			projectDirPath = "";
@@ -558,6 +570,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B1967AF42D1E15B100AADF20 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B1967AF52D1E15B100AADF20 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1967AF42D1E15B100AADF20 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		B1967AF72D1E15B100AADF20 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1967AF42D1E15B100AADF20 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B19A0E4C2D12146800488298 /* Project object */;
 }
