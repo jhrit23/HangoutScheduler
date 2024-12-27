@@ -15,7 +15,7 @@ struct HangoutSchedulerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            RegisterView()
+            ContentView()
         }
     }
 }

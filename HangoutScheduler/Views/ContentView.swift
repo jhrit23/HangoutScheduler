@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var viewModel = ContentViewViewModel()
+    
     var body: some View {
         VStack {
-            Text("Project Updated!")
+            if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty {
+                //Add a view here
+            }else{
+                LoginView()
+            }
         }
         .padding()
     }
