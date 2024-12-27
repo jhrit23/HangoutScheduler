@@ -12,6 +12,8 @@ class LoginViewViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var password: String = ""
     
+    @Published var showInvalidEntryAlert: Bool = false
+    
     init() {}
     
     func login() {
