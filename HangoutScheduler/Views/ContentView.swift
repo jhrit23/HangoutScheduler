@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty {
-                //Add a view here
+                HomeView()
             }else{
                 LoginView()
             }
