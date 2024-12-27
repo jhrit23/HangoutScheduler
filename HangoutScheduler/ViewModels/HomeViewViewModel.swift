@@ -9,6 +9,9 @@ import FirebaseAuth
 import Foundation
 
 class HomeViewViewModel: ObservableObject {
+    
+    @Published var showNewHangoutView: Bool = false
+    
     init() {}
     
     func logout() {

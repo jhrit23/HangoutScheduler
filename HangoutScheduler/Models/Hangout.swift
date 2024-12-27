@@ -14,17 +14,19 @@ struct Hangout {
     private var location: String
     private var description: String
     private var dateTime: TimeInterval
+    private var dateSelected: Bool
     private var guests: [User]
     private var activeHangout: Bool
     private var hangoutCode: String
     
-    init(id: String, ownerId: String, name: String, location: String, description: String, dateTime: TimeInterval, guests: [User], hangoutCode: String) {
+    init(id: String, ownerId: String, name: String, location: String, description: String, dateTime: TimeInterval = 0, dateSelected: Bool = true,guests: [User], hangoutCode: String) {
         self.id = id
         self.ownerId = ownerId
         self.name = name
         self.location = location
         self.description = description
         self.dateTime = dateTime
+        self.dateSelected = dateSelected
         self.guests = guests
         self.activeHangout = true
         self.hangoutCode = hangoutCode
