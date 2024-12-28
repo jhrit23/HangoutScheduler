@@ -39,9 +39,7 @@ class RegisterViewViewModel: ObservableObject {
     }
     
     func register() {
-        print("Called 1")
         guard fieldsEmpty(), validEmail() else { return }
-        print("Called 2")
         Auth.auth().createUser(withEmail: email, password: password) {[weak self] result, error in
             guard let userId = result?.user.uid else { return }
             self?.insertUserRecord(id: userId)

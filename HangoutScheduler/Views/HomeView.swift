@@ -14,9 +14,12 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink("Create a Hangout", destination: {
-                    NewHangoutView()
+                Button(action: {
+                    viewModel.showNewHangoutView = true
+                }, label: {
+                    Text("Create a Hangout")
                 })
+                .buttonStyle(.borderedProminent)
                 .padding()
                 NavigationLink("Manage Your Hangouts", destination: {
                     ManageHangoutsView()
@@ -33,6 +36,9 @@ struct HomeView: View {
                 })
                 .padding()
             }
+            .sheet(isPresented: $viewModel.showNewHangoutView, content: {
+                NewHangoutView(showView: $viewModel.showNewHangoutView)
+            })
         }
     }
 }
