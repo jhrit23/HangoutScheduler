@@ -28,6 +28,7 @@ struct NewHangoutView: View {
                 Button(action: {
                     if viewModel.validHangout() {
                         showView = false
+                        viewModel.createHangout()
                     }else{
                         viewModel.showAlert = true
                     }

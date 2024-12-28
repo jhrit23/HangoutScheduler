@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Hangout {
+struct Hangout: Codable {
     private let id: String
     private let ownerId: String
     private var name: String
@@ -19,7 +19,7 @@ struct Hangout {
     private var activeHangout: Bool
     private var hangoutCode: String
     
-    init(id: String, ownerId: String, name: String, location: String, description: String, dateTime: TimeInterval = 0, dateSelected: Bool = true,guests: [User], hangoutCode: String) {
+    init(id: String, ownerId: String, name: String, location: String, description: String, dateTime: TimeInterval = 1, dateSelected: Bool = true,guests: [User] = [], hangoutCode: String) {
         self.id = id
         self.ownerId = ownerId
         self.name = name
