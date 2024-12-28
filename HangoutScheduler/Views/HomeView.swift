@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject var viewModel = HomeViewViewModel()
+    let uid: String
     
     var body: some View {
         NavigationView {
@@ -22,7 +23,7 @@ struct HomeView: View {
                 .buttonStyle(.borderedProminent)
                 .padding()
                 NavigationLink("Manage Your Hangouts", destination: {
-                    ManageHangoutsView()
+                    ManageHangoutsView(uid: uid)
                 })
                 .padding()
                 NavigationLink("See Other Hangouts", destination: {
@@ -44,5 +45,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    HomeView(uid: "")
 }

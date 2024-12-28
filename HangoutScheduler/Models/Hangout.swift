@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Hangout: Codable {
-    private let id: String
+struct Hangout: Codable, Identifiable {
+    internal let id: String
     private let ownerId: String
     private var name: String
     private var location: String
