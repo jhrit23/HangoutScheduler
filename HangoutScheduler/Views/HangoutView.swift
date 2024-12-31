@@ -25,6 +25,8 @@ struct HangoutView: View {
                     Text("\(Date(timeIntervalSince1970: hangout.getDateTime()).formatted(date: .abbreviated, time: .shortened))")
                         .font(.footnote)
                 }
+                Text("Hangout Code: " + hangout.getHangoutCode())
+                    .font(.footnote)
             }
         }
     }

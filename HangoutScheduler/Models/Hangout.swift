@@ -10,9 +10,9 @@ import Foundation
 struct Hangout: Codable, Identifiable {
     internal let id: String
     private let ownerId: String
-    private var name: String
-    private var location: String
-    private var description: String
+    internal var name: String
+    internal var location: String
+    internal var description: String
     private var dateTime: TimeInterval
     private var dateSelected: Bool
     private var guests: [User]
@@ -78,6 +78,14 @@ struct Hangout: Codable, Identifiable {
     
     mutating func addGuest(_ guest: User) {
         guests.append(guest)
+    }
+    
+    func getHangoutCode() -> String {
+        return hangoutCode
+    }
+    
+    func getActiveHangout() -> Bool {
+        return activeHangout
     }
     
     //Implementation for removing a specific guest is needed
